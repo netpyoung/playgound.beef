@@ -1,0 +1,9 @@
+FileVersion = 1
+
+[Project]
+Name = "Pong_Beef"
+StartupObject = "Pong_Beef.Program"
+
+[Dependencies]
+corlib = "*"
+SDL2 = "*"
