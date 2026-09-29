@@ -1,0 +1,8 @@
+FileVersion = 1
+
+[Project]
+Name = "TextGameFramework_Beef"
+StartupObject = "TextGameFramework_Beef.Program"
+
+[Dependencies]
+"Win32-Beef.git" = {Git = "https://github.com/SedulousWorks/Win32-Beef.git"}

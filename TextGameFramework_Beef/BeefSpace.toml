@@ -1,0 +1,8 @@
+FileVersion = 1
+
+[Workspace]
+StartupProject = "TextGameFramework_Beef"
+
+[Projects]
+TextGameFramework_Beef = {Path = "."}
+"Win32-Beef.git" = {Git = "https://github.com/SedulousWorks/Win32-Beef.git"}
