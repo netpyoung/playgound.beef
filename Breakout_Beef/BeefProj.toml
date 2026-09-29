@@ -1,0 +1,9 @@
+FileVersion = 1
+
+[Project]
+Name = "Breakout_Beef"
+StartupObject = "Breakout_Beef.Program"
+
+[Dependencies]
+corlib = "*"
+SDL2 = "*"
