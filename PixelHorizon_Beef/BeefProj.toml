@@ -1,0 +1,10 @@
+FileVersion = 1
+
+[Project]
+Name = "PixelHorizon_Beef"
+StartupObject = "PixelHorizon_Beef.Program"
+DefaultNamespace = "PixelHorizon_Beef"
+
+[Dependencies]
+corlib = "*"
+"Win32-Beef.git" = {Git = "https://github.com/SedulousWorks/Win32-Beef.git"}

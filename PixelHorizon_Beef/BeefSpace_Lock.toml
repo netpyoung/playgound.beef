@@ -1,0 +1,6 @@
+FileVersion = 1
+
+[Locks."Win32-Beef.git".Git]
+URL = "https://github.com/SedulousWorks/Win32-Beef.git"
+Tag = ""
+Hash = "b271f272bac213d425ae0149c0ec4907b4cf49e3"
