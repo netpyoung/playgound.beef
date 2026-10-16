@@ -12,7 +12,8 @@ static class Rtweekend
         return degrees * PI / 180.0;
     }
 
-    static Random rand_state = new Random(seed: 0) ~ delete _;
+    [ThreadStatic]
+    public static Random rand_state = new Random(seed: 0) ~ delete _;
 
     [Inline]
     public static double random_double()

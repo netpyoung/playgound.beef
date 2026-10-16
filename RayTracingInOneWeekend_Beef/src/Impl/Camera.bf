@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using System.IO;
 using System.Threading;
+using System.Collections;
 namespace RayTracingInOneWeekend_Beef.Impl;
 
 struct Camera
@@ -166,30 +167,31 @@ struct Camera
         var outBuff = new rgb[image_width * image_height];
         defer delete outBuff;
 
-        int32 useThreadCount = 4;
+        // ThreadPool.[Friend]sWorkerThreadStats.mMax  = (int32)(Platform.ProcessorCount * 0.8f);
 
-        //ThreadPool.[Friend]sWorkerThreadStats.mMax = useThreadCount;
+        int32 splitCount = 10;
 
-        int quot = image_height / useThreadCount;
-        int rem = image_height % useThreadCount;
+        int quot = image_height / splitCount;
+        int rem = image_height % splitCount;
         int count = quot;
         if (rem > 0)
         {
             count += 1;
         }
 
-        remaining = (uint32)useThreadCount;
+        remaining = (uint32)splitCount;
         var doneEvent = scope WaitEvent();
 
-        for (int i = 0; i < useThreadCount; i++)
+        for (int i = 0; i < splitCount; i++)
         {
             int from = i * count;
             int to = Math.Min((i + 1) * count, image_height);
             ThreadPool.QueueUserWorkItem(new [?] () =>
                 {
+                    Rtweekend.rand_state = scope Random(seed: 0);
                     for (int y = from; y < to; ++y)
                     {
-                        renderRow(ref this, y, world, outBuff);
+                        renderRow(this, y, world, outBuff);
                         CLOG.Write(".");
                     }
 
@@ -210,7 +212,7 @@ struct Camera
     }
 
     [Inline]
-    static void renderRow(ref Camera camera, int y, IHittable world, rgb[] outBuff)
+    static void renderRow(in Camera camera, int y, IHittable world, rgb[] outBuff)
     {
         var rgbBuff = Span<rgb>(outBuff, y * camera.image_width);
         for (let x in 0 ..< camera.image_width)
