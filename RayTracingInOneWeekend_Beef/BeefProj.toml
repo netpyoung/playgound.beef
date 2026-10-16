@@ -1,0 +1,23 @@
+FileVersion = 1
+
+[Project]
+Name = "RayTracingInOneWeekend_Beef"
+StartupObject = "RayTracingInOneWeekend_Beef.Program"
+
+[Dependencies]
+corlib = "*"
+corlib = "*"
+
+[Configs.Debug.Win64]
+DebugWorkingDirectory = "$(WorkspaceDir)"
+
+[Configs.Release.Win64]
+DebugWorkingDirectory = "$(WorkspaceDir)"
+
+[Configs.Paranoid.Win64]
+PostBuildCmds = ["ShowFile(\"ch03.ppm\")"]
+DebugWorkingDirectory = "$(WorkspaceDir)"
+
+[Configs.Test.Win64]
+PostBuildCmds = ["ShowFile(\"ch03.ppm\")"]
+DebugWorkingDirectory = "$(WorkspaceDir)"

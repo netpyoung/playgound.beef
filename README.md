@@ -27,3 +27,8 @@ WINAPI / DirectDraw
 - [github: megayuchi/PixelHorizon](https://github.com/megayuchi/PixelHorizon)
   - [megayuchi: DirectDraw 프로그래밍 소개](https://www.youtube.com/watch?v=J0MNKUYw1zY)
   - [megayuchi: DirectDraw 2D 게임 프로그래밍](https://www.youtube.com/watch?v=66rSVuDBSro)
+
+
+## RayTracingInOneWeekend_Beef
+
+- <https://raytracing.github.io/books/RayTracingInOneWeekend.html>

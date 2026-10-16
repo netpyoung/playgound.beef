@@ -1,0 +1,7 @@
+FileVersion = 1
+
+[Workspace]
+StartupProject = "RayTracingInOneWeekend_Beef"
+
+[Projects]
+RayTracingInOneWeekend_Beef = {Path = "."}
